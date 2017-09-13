@@ -1,0 +1,70 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: splinestudio-hp-vadim
+ * Date: 07.09.17
+ * Time: 15:07
+ */
+
+namespace CasinoAdminBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+/**
+ * Class Buff
+ * @package CasinoAdminBundle\Entity
+ * @ORM\Table(name="buff")
+ * @ORM\Entity
+ */
+class Buff
+{
+
+    /**
+     * @ORM\Column(type="integer", name="_id")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $Id;
+
+    /**
+     * @ORM\Column(type="string", name="affect_property")
+     */
+    private $affectProperty;
+
+    /**
+     * @ORM\Column(type="integer", name="affect_value")
+     */
+    private $affectValue;
+
+    /**
+     * @ORM\Column(type="integer", name="duration")
+     */
+    private $duration;
+
+    /**
+     * @ORM\Column(type="string", name="actions")
+     */
+    private $actions;
+
+    /**
+     * @ORM\Column(type="integer", name="action_count")
+     */
+    private $actionCount;
+
+    /**
+     * @ORM\Column(type="string", name="picture")
+     */
+    private $picture;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Test", mappedBy="Buff")
+     * @ORM\JoinColumn(name="id", referencedColumnName="buff_id")
+     */
+    private $test;
+
+    public function __construct()
+    {
+        $this->test = new ArrayCollection();
+    }
+
+
+}

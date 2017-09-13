@@ -1,0 +1,24 @@
+services:
+#    casino_admin.example:
+#        class: CasinoAdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+
+#     admin.buff:
+#        class: CasinoAdminBundle\Admin\BuffAdmin
+#        arguments: [~, CasinoAdminBundle\Entity\Buff, ~]
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, label: Buff }
+#        public: true
+
+      app.admin.post:
+          class: CasinoAdminBundle\Admin\BuffAdmin
+          tags:
+              - { name: sonata.admin, manager_type: orm, group: "Buff_group", label: "Buff" }
+          arguments:
+              - ~
+              - CasinoAdminBundle\Entity\Buff
+              - CasinoAdminBundle\Entity\Test
+          calls:
+              - [ setTranslationDomain, [CasinoAdminBundle]]
+          public: true

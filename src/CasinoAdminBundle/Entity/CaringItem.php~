@@ -42,7 +42,9 @@ class CaringItem
    private $happiness;
 
     /**
-     * @ORM\Column(type="integer", name="buff_id")
+     * One Caring Item has One Buff.
+     * @ORM\OneToOne(targetEntity="Buff")
+     * @ORM\JoinColumn(name="buff_id", referencedColumnName="Id")
      */
    private $buffId;
 
@@ -56,109 +58,5 @@ class CaringItem
      */
    private $description;
 
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->Id;
-    }
 
-    /**
-     * Set picture
-     *
-     * @param string $picture
-     *
-     * @return CaringItem
-     */
-    public function setPicture($picture)
-    {
-        $this->picture = $picture;
-
-        return $this;
-    }
-
-    /**
-     * Get picture
-     *
-     * @return string
-     */
-    public function getPicture()
-    {
-        return $this->picture;
-    }
-
-    /**
-     * Set costCoins
-     *
-     * @param integer $costCoins
-     *
-     * @return CaringItem
-     */
-    public function setCostCoins($costCoins)
-    {
-        $this->costCoins = $costCoins;
-
-        return $this;
-    }
-
-    /**
-     * Get costCoins
-     *
-     * @return integer
-     */
-    public function getCostCoins()
-    {
-        return $this->costCoins;
-    }
-
-    /**
-     * Set happiness
-     *
-     * @param integer $happiness
-     *
-     * @return CaringItem
-     */
-    public function setHappiness($happiness)
-    {
-        $this->happiness = $happiness;
-
-        return $this;
-    }
-
-    /**
-     * Get happiness
-     *
-     * @return integer
-     */
-    public function getHappiness()
-    {
-        return $this->happiness;
-    }
-
-    /**
-     * Set buffId
-     *
-     * @param integer $buffId
-     *
-     * @return CaringItem
-     */
-    public function setBuffId($buffId)
-    {
-        $this->buffId = $buffId;
-
-        return $this;
-    }
-
-    /**
-     * Get buffId
-     *
-     * @return integer
-     */
-    public function getBuffId()
-    {
-        return $this->buffId;
-    }
 }

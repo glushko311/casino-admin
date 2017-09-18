@@ -42,7 +42,9 @@ class CaringItem
    private $happiness;
 
     /**
-     * @ORM\Column(type="integer", name="buff_id")
+     * One Caring Item has One Buff.
+     * @ORM\OneToOne(targetEntity="Buff")
+     * @ORM\JoinColumn(name="buff_id", referencedColumnName="_id")
      */
    private $buffId;
 
@@ -55,6 +57,8 @@ class CaringItem
      * @ORM\Column(type="string", name="description")
      */
    private $description;
+
+
 
     /**
      * Get id
@@ -139,30 +143,6 @@ class CaringItem
     }
 
     /**
-     * Set buffId
-     *
-     * @param integer $buffId
-     *
-     * @return CaringItem
-     */
-    public function setBuffId($buffId)
-    {
-        $this->buffId = $buffId;
-
-        return $this;
-    }
-
-    /**
-     * Get buffId
-     *
-     * @return integer
-     */
-    public function getBuffId()
-    {
-        return $this->buffId;
-    }
-
-    /**
      * Set name
      *
      * @param string $name
@@ -208,5 +188,29 @@ class CaringItem
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set buffId
+     *
+     * @param \CasinoAdminBundle\Entity\Buff $buffId
+     *
+     * @return CaringItem
+     */
+    public function setBuffId(\CasinoAdminBundle\Entity\Buff $buffId = null)
+    {
+        $this->buffId = $buffId;
+
+        return $this;
+    }
+
+    /**
+     * Get buffId
+     *
+     * @return \CasinoAdminBundle\Entity\Buff
+     */
+    public function getBuffId()
+    {
+        return $this->buffId;
     }
 }

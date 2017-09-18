@@ -23,20 +23,28 @@ class CaringItemAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('costCoins', 'text', array('label' => 'affect property'))
-            ->add('picture', 'integer', array('label' => 'affect value'))
-            ->add('happiness', 'integer', array('label' => 'duration'))
-            ->add('buffId', 'text', array('label' => 'actions'))
+            ->add('name', 'text', array('label' => 'name'))
+            ->add('description', 'textarea', array('label' => 'description'))
+            ->add('costCoins', 'text', array('label' => 'cost in coins'))
+            ->add('happiness', 'integer', array('label' => 'happiness bonus'))
+            ->add('picture', 'text', array('label' => 'picture'))
+            ->add('buffId', 'sonata_type_model', array(
+                'class'=>'CasinoAdminBundle\Entity\Buff',
+                'property'=>'name',
+                'multiple' => false));
+//            ->add('buffId', 'text', array('label' => 'buffId'))
+
         ;
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+            ->add('Id')
+            ->add('name')
             ->add('costCoins')
-            ->add('picture')
             ->add('happiness')
-            ->add('buffId')
+//            ->add('buffId')
         ;
     }
 
@@ -44,9 +52,10 @@ class CaringItemAdmin extends AbstractAdmin
     {
         $listMapper
             ->addIdentifier('Id')
+            ->addIdentifier('name')
             ->addIdentifier('costCoins')
-            ->addIdentifier('picture')
-            ->addIdentifier('buffId')
+            ->addIdentifier('happiness')
+//            ->addIdentifier('buffId')
 
         ;
     }

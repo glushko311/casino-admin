@@ -25,6 +25,13 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Common Variables }
         public: true
 
+     admin.equipment:
+        class: CasinoAdminBundle\Admin\EquipmentAdmin
+        arguments: [~, CasinoAdminBundle\Entity\Equipment, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Equipment }
+        public: true
+
      admin.test:
         class: CasinoAdminBundle\Admin\TestAdmin
         arguments: [~, CasinoAdminBundle\Entity\Test, ~]

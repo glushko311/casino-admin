@@ -9,12 +9,12 @@
 namespace CasinoAdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /**
- * Class TrainingBuildingOption
+ * Class Training
  * @package CasinoAdminBundle\Entity
  * @ORM\Table(name="training_building_option")
  * @ORM\Entity
  */
-class TrainingBuildingOption
+class Training
 {
 
     /**
@@ -80,7 +80,7 @@ class TrainingBuildingOption
      *
      * @param integer $trainingBuildingId
      *
-     * @return TrainingBuildingOption
+     * @return Training
      */
     public function setTrainingBuildingId($trainingBuildingId)
     {
@@ -104,7 +104,7 @@ class TrainingBuildingOption
      *
      * @param integer $level
      *
-     * @return TrainingBuildingOption
+     * @return Training
      */
     public function setLevel($level)
     {
@@ -128,7 +128,7 @@ class TrainingBuildingOption
      *
      * @param integer $costCoins
      *
-     * @return TrainingBuildingOption
+     * @return Training
      */
     public function setCostCoins($costCoins)
     {
@@ -152,7 +152,7 @@ class TrainingBuildingOption
      *
      * @param string $picture
      *
-     * @return TrainingBuildingOption
+     * @return Training
      */
     public function setPicture($picture)
     {
@@ -176,7 +176,7 @@ class TrainingBuildingOption
      *
      * @param integer $age
      *
-     * @return TrainingBuildingOption
+     * @return Training
      */
     public function setAge($age)
     {
@@ -200,7 +200,7 @@ class TrainingBuildingOption
      *
      * @param integer $consistency
      *
-     * @return TrainingBuildingOption
+     * @return Training
      */
     public function setConsistency($consistency)
     {
@@ -224,7 +224,7 @@ class TrainingBuildingOption
      *
      * @param integer $propertyValue
      *
-     * @return TrainingBuildingOption
+     * @return Training
      */
     public function setPropertyValue($propertyValue)
     {
@@ -248,7 +248,7 @@ class TrainingBuildingOption
      *
      * @param string $name
      *
-     * @return TrainingBuildingOption
+     * @return Training
      */
     public function setName($name)
     {

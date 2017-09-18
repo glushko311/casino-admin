@@ -39,6 +39,13 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Food }
         public: true
 
+     admin.training_building:
+        class: CasinoAdminBundle\Admin\TrainingBuildingAdmin
+        arguments: [~, CasinoAdminBundle\Entity\TrainingBuilding, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Training Building }
+        public: true
+
      admin.test:
         class: CasinoAdminBundle\Admin\TestAdmin
         arguments: [~, CasinoAdminBundle\Entity\Test, ~]

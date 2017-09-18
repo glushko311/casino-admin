@@ -32,6 +32,13 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Equipment }
         public: true
 
+     admin.food:
+        class: CasinoAdminBundle\Admin\FoodAdmin
+        arguments: [~, CasinoAdminBundle\Entity\Food, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Food }
+        public: true
+
      admin.test:
         class: CasinoAdminBundle\Admin\TestAdmin
         arguments: [~, CasinoAdminBundle\Entity\Test, ~]

@@ -30,7 +30,9 @@ class Food
     private $picture;
 
     /**
-     * @ORM\Column(type="integer", name="buff_id")
+     * One Food has One Buff.
+     * @ORM\OneToOne(targetEntity="Buff")
+     * @ORM\JoinColumn(name="buff_id", referencedColumnName="_id")
      */
     private $buffId;
 

@@ -20,16 +20,6 @@ class BuffAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
 
-        $em = $this->modelManager->getEntityManager('CasinoAdminBundle\Entity\Test');
-
-        $qb = $em->createQueryBuilder();
-
-        $qb = $qb->add('select', 'u')
-            ->add('from', 'CasinoAdminBundle\Entity\Test u');
-
-        $query = $qb->getQuery();
-        $arrayType = $query->getArrayResult();
-
         $formMapper
             ->add('affectProperty', 'choice', array('choices' => array(
                 'Speed'=>'Speed',
@@ -57,7 +47,7 @@ class BuffAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-//            ->add('Id')
+            ->add('Id')
             ->add('name')
             ->add('affectProperty')
             ->add('affectValue')
@@ -70,6 +60,7 @@ class BuffAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->addIdentifier('Id')
             ->addIdentifier('name')
             ->addIdentifier('affectProperty')
             ->addIdentifier('affectValue')

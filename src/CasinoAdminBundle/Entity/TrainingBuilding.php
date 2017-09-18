@@ -30,6 +30,16 @@ class TrainingBuilding
     private  $trainableProperty;
 
     /**
+     * @ORM\Column(type="string", name="name")
+     */
+    private  $name;
+
+    /**
+     * @ORM\Column(type="string", name="description")
+     */
+    private  $description;
+
+    /**
      * Get id
      *
      * @return integer
@@ -61,5 +71,53 @@ class TrainingBuilding
     public function getTrainableProperty()
     {
         return $this->trainableProperty;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return TrainingBuilding
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return TrainingBuilding
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

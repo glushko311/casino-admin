@@ -1,0 +1,246 @@
+//border-radius: 0.5vw 0 0 0.5vw; === @include rounded_corners(0.5vw, 0, 0, 0.5vw);
+//display:flex; === @include flexbox();
+//flex-direction:column; === @include flex-direction(column);
+//justify-content: flex-start; === @include justify-content(flex-start);
+//align-items: center; === @include align-items(center);
+
+@import 'mixins';
+
+//table styles start
+/*Do not forget to describe the styles for:focus!*/
+:focus {
+  outline:0;
+}
+body {
+  line-height:1;
+}
+ol, ul {
+  list-style:none;
+}
+/*For tables still need to write 'cellspacing="0"' in code*/
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+caption, th, td {
+  text-align:left;
+  font-weight:normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:"";
+}
+blockquote, q {
+  quotes:"" "";
+}
+//table styles end
+
+html {
+  font-size: 0.9vw;
+}
+
+body {
+  font-family: OpenSans, sans-serif;
+  section {
+    * {
+      box-sizing: border-box;
+    }
+    p {
+      color: $c-grey;
+      font-size: $fz-1_2;
+      margin: 0;
+    }
+
+    h1 {
+      color: $c-black;
+      font-size: $fz-2_5;
+      font-weight: $fw-6;
+    }
+    h2 {
+      @media (max-width: 770px) {
+        font-size: 2.5rem;
+      }
+      color: $c-black;
+      font-size: $fz-2;
+      font-weight: $fw-6;
+    }
+    h3 {
+      color: $c-blue;
+      font-size: $fz-1_5;
+      font-weight: $fw-6;
+    }
+  }
+
+  //table styles start
+  .features-table
+  {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border: 0;
+    border-spacing: 0;
+    text-shadow: 0 1px 0 #fff;
+    color: #2a2a2a;
+    background: #fafafa;
+    background-image: -moz-linear-gradient(top, #fff, #eaeaea, #fff); /* Firefox 3.6 */
+    background-image: -webkit-gradient(linear,center bottom,center top,from(#fff),color-stop(0.5, #eaeaea),to(#fff));
+    margin-bottom:20px;
+  }
+
+  .features-table td
+  {
+    height: 50px;
+    padding: 0 20px;
+    border-bottom: 1px solid #cdcdcd;
+    box-shadow: 0 1px 0 white;
+    -moz-box-shadow: 0 1px 0 white;
+    -webkit-box-shadow: 0 1px 0 white;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+  }
+
+  .features-table tbody td
+  {
+    text-align: center;
+    width: 150px;
+  }
+
+
+  .features-table td.grey
+  {
+    background: #efefef;
+    background: rgba(144,144,144,0.15);
+    border-right: 1px solid white;
+  }
+
+  .features-table td.green
+  {
+    background: #e7f3d4;
+    background: rgba(184,243,85,0.3);
+  }
+
+  .features-table td:nowrap
+  {
+    white-space: nowrap;
+  }
+
+  .features-table thead td
+  {
+    font-size: 120%;
+    font-weight: bold;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top: 1px solid #eaeaea;
+  }
+
+  .features-table tfoot td
+  {
+    font-size: 120%;
+    font-weight: bold;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom: 1px solid #dadada;
+  }
+  //table styles start
+
+  //pagination styles start
+  ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  ul.pagination li {display: inline;}
+
+  ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+  }
+
+  .pagination li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .pagination li:last-child a {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+
+  ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+  //pagination styles end
+
+  //structure styles
+  header{
+    height: 5vw;
+    background: #888;
+    @include flexbox();
+    @include justify-content(flex-start);
+    @include align-items(center);
+
+    .logo{
+      width: 10vw;
+      height: 5vw;
+      margin: 0 20vw 0 5vw;
+      background: #000;
+    }
+    h1{
+      font-size: 3rem;
+    }
+  }
+  .central_cont{
+    width: 100%;
+    @include flexbox();
+
+    .left_bar{
+      width: 20%;
+      background: #888;
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(flex-start);
+      @include align-items(center);
+      h2{
+        font-size:2.5rem;
+      }
+      ul{
+        padding: 0;
+        margin: 0;
+        width: 90%;
+        li{
+          a{
+            text-decoration: none;
+            color:#000;
+            height: 5vw;
+            display: block;
+            font-size: 2rem;
+            &:hover{
+              color:darkblue;
+            }
+          }
+        }
+      }
+    }
+    .table_section{
+      width: 80%;
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(flex-start);
+    }
+  }
+}

@@ -59,6 +59,11 @@ class TrainingBuildingOption
      */
     private $propertyValue;
 
+    /**
+     * @ORM\Column(type="string", name="name")
+     */
+    private $name;
+
 
     /**
      * Get id

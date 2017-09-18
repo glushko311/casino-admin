@@ -30,6 +30,16 @@ class TrainingBuilding
     private  $trainableProperty;
 
     /**
+     * @ORM\Column(type="string", name="name")
+     */
+    private  $name;
+
+    /**
+     * @ORM\Column(type="string", name="description")
+     */
+    private  $description;
+
+    /**
      * Get id
      *
      * @return integer

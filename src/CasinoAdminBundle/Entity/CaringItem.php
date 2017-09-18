@@ -47,6 +47,16 @@ class CaringItem
    private $buffId;
 
     /**
+     * @ORM\Column(type="string", name="name")
+     */
+   private $name;
+
+    /**
+     * @ORM\Column(type="string", name="description")
+     */
+   private $description;
+
+    /**
      * Get id
      *
      * @return integer
@@ -150,5 +160,53 @@ class CaringItem
     public function getBuffId()
     {
         return $this->buffId;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return CaringItem
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return CaringItem
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

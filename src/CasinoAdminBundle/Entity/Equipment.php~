@@ -52,6 +52,18 @@ class Equipment
     private $costCoins;
 
 
+    /**
+     * @ORM\Column(type="string", name="name")
+     */
+    private $name;
+
+
+    /**
+     * @ORM\Column(type="string", name="description")
+     */
+    private $description;
+
+
 
     /**
      * Get id

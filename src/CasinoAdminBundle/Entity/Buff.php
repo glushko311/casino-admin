@@ -19,9 +19,9 @@ class Buff
 {
 
     /**
-     * @ORM\Column(type="integer", name="_id")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer", name="_id")
      */
     private $Id;
 
@@ -56,17 +56,28 @@ class Buff
     private $picture;
 
     /**
-     * @ORM\OneToMany(targetEntity="Test", mappedBy="Buff")
-     * @ORM\JoinColumn(name="id", referencedColumnName="buff_id")
+     * @ORM\Column(type="string", name="name")
      */
-    private $test;
+    private $name;
 
+    /**
+     * @ORM\Column(type="string", name="description")
+     */
+    private $description;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Test", mappedBy="buffId")
+     */
+    private $tests;
+
+    
+    /**
+     * Constructor
+     */
     public function __construct()
     {
-        $this->test = new ArrayCollection();
+        $this->tests = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
-
 
     /**
      * Get id
@@ -231,7 +242,7 @@ class Buff
      */
     public function addTest(\CasinoAdminBundle\Entity\Test $test)
     {
-        $this->test[] = $test;
+        $this->tests[] = $test;
 
         return $this;
     }
@@ -243,16 +254,69 @@ class Buff
      */
     public function removeTest(\CasinoAdminBundle\Entity\Test $test)
     {
-        $this->test->removeElement($test);
+        $this->tests->removeElement($test);
     }
 
     /**
-     * Get test
+     * Get tests
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTest()
+    public function getTests()
     {
-        return $this->test;
+        return $this->tests;
+    }
+
+    public function __toString()
+    {
+        return strval($this->Id);
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Buff
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Buff
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

@@ -44,7 +44,19 @@ class Food
      */
     private $happiness;
 
-   
+
+    /**
+     * @ORM\Column(type="string", name="name")
+     */
+    private $name;
+
+
+    /**
+     * @ORM\Column(type="string", name="description")
+     */
+    private $description;
+
+
 
     /**
      * Get id
@@ -150,5 +162,53 @@ class Food
     public function getHappiness()
     {
         return $this->happiness;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Food
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Food
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

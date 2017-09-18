@@ -15,42 +15,42 @@ use Sonata\AdminBundle\Form\FormMapper;
 //use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\CoreBundle\Form\Type\CollectionType;
 
-
-
-
 class BuffAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper
-            ->with('Buff')
-                ->add('affectProperty', 'text', array('label' => 'affect property'))
-                ->add('affectValue', 'integer', array('label' => 'affect value'))
-                ->add('duration', 'integer', array('label' => 'duration'))
-                ->add('actions', 'text', array('label' => 'actions'))
-                ->add('actionCount', 'integer', array('label' => 'action count'))
-                ->add('picture', 'text', array('label' => 'picture url'))
-            ->end()
-            ->with('Test')
-                ->add('text','text', array('label'=>'test text'))
 
-//
-////            ->add('Id', null, array('label' => 'id'))
-//            ->add('affectProperty', 'text', array('label' => 'affect property'))
-//            ->add('affectValue', 'integer', array('label' => 'affect value'))
-//            ->add('duration', 'integer', array('label' => 'duration'))
-//            ->add('actions', 'text', array('label' => 'actions'))
-//            ->add('actionCount', 'integer', array('label' => 'action count'))
-//            ->add('picture', 'text', array('label' => 'picture url'))
-//            ->add('Test', CollectionType::class, array(
-//                'by_reference' => false
-//                ),
-//                array(
-//                    'edit' => 'inline',
-//                    'inline' => 'table',
-//                    'sortable' => 'position',
-//                    'limit' => 3
-//            ))
+        $em = $this->modelManager->getEntityManager('CasinoAdminBundle\Entity\Test');
+
+        $qb = $em->createQueryBuilder();
+
+        $qb = $qb->add('select', 'u')
+            ->add('from', 'CasinoAdminBundle\Entity\Test u');
+
+        $query = $qb->getQuery();
+        $arrayType = $query->getArrayResult();
+
+        $formMapper
+            ->add('affectProperty', 'choice', array('choices' => array(
+                'Speed'=>'Speed',
+                'Stamina'=>'Stamina',
+                'Acceleration'=>'Acceleration',
+                'Finishing'=>'Finishing',
+                'Starting'=>'Starting',
+                'Pacing'=>'Pacing'
+            )))
+            ->add('affectValue', 'integer', array('label' => 'affect value'))
+            ->add('duration', 'integer', array('label' => 'duration'))
+            ->add('actions', 'text', array('label' => 'actions'))
+            ->add('actionCount', 'integer', array('label' => 'action count'))
+            ->add('picture', 'text', array('label' => 'picture url'))
+            ->add('name', 'text', array('label' => 'name'))
+            ->add('description', 'textarea', array('label' => 'description'))
+
+            ->add('tests', 'sonata_type_model', array(
+                'class'=>'CasinoAdminBundle\Entity\Test',
+                'property'=>'text',
+                'multiple' => true));
         ;
     }
 
@@ -58,19 +58,19 @@ class BuffAdmin extends AbstractAdmin
     {
         $datagridMapper
 //            ->add('Id')
+            ->add('name')
             ->add('affectProperty')
             ->add('affectValue')
             ->add('duration')
             ->add('actions')
             ->add('actionCount')
-            ->add('picture')
         ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('Id')
+            ->addIdentifier('name')
             ->addIdentifier('affectProperty')
             ->addIdentifier('affectValue')
             ->addIdentifier('duration')

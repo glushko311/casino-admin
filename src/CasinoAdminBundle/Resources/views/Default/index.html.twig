@@ -1,1 +1,118 @@
-Hello World!
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header>
+        <div class="logo"></div>
+        <h1>I-Race Admin Panel</h1>
+    </header>
+    <div class="content">
+        <div class="central_cont">
+            <div class="left_bar">
+                <h2>Таблица</h2>
+                <ul class="names_cont">
+                    <li><a href="#" class="table_name">Buff</a></li>
+                    <li><a href="#" class="table_name">Carring item</a></li>
+                    <li><a href="#" class="table_name">Common variable</a></li>
+                    <li><a href="#" class="table_name">Equipment</a></li>
+                    <li><a href="#" class="table_name">Food</a></li>
+                    <li><a href="#" class="table_name">Training building</a></li>
+                    <li><a href="#" class="table_name">Training</a></li>
+                </ul>
+            </div>
+            <div class="table_section">
+
+                <table class="features-table">
+                    <thead>
+                        <tr>
+                            <td class="grey">ID</td>
+                            <td class="grey">Affect property</td>
+                            <td class="grey" nowrap>Affect value</td>
+                            <td class="grey">Duration</td>
+                            <td class="grey">Actions</td>
+                            <td class="grey">Action Count</td>
+                            <td class="grey">Picture</td>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                    </tfoot>
+
+                    <tbody>
+                    <tr>
+                        <td class="green"><a href="#">221</a></td>
+                        <td class="green"><a href="#">speed</a></td>
+                        <td class="green"><a href="#">20</a></td>
+                        <td class="green"><a href="#">100</a></td>
+                        <td class="green"><a href="#">5</a></td>
+                        <td class="green"><a href="#">3</a></td>
+                        <td class="green"><a href="#">img/speed1.jpg</a></td>
+                    </tr>
+                    <tr>
+                        <td class="green"><a href="#">222</a></td>
+                        <td class="green"><a href="#">agility</a></td>
+                        <td class="green"><a href="#">20</a></td>
+                        <td class="green"><a href="#">100</a></td>
+                        <td class="green"><a href="#">5</a></td>
+                        <td class="green"><a href="#">3</a></td>
+                        <td class="green"><a href="#">img/agility1.jpg</a></td>
+                    </tr>
+                    <tr>
+                        <td class="green"><a href="#">223</a></td>
+                        <td class="green"><a href="#">finishing</a></td>
+                        <td class="green"><a href="#">20</a></td>
+                        <td class="green"><a href="#">100</a></td>
+                        <td class="green"><a href="#">5</a></td>
+                        <td class="green"><a href="#">3</a></td>
+                        <td class="green"><a href="#">img/finishing1.jpg</a></td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                    <li><a href="#">«</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a class="active" href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer></footer>
+
+    <div class="background_modal">
+
+    </div>
+    <div class="modal_form">
+        <h2></h2>
+        <div class="main_block">
+            <h2>Buff</h2>
+            <div class="input_block">
+                <label for=""></label>
+                <input name="" type="text" placeholder="">
+            </div>
+
+        </div>
+        <div class="loc_block">
+            <div class="en_block">
+                <div class="input_block">
+                    <label for=""></label>
+                    <input name="" type="text" placeholder="">
+                </div>
+            </div>
+            <div class="fr_block"></div>
+        </div>
+
+
+
+    </div>
+{% endblock %}

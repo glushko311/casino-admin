@@ -59,6 +59,11 @@ class TrainingBuildingOption
      */
     private $propertyValue;
 
+    /**
+     * @ORM\Column(type="string", name="name")
+     */
+    private $name;
+
 
     /**
      * Get id
@@ -236,5 +241,29 @@ class TrainingBuildingOption
     public function getPropertyValue()
     {
         return $this->propertyValue;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return TrainingBuildingOption
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

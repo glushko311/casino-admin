@@ -52,6 +52,18 @@ class Equipment
     private $costCoins;
 
 
+    /**
+     * @ORM\Column(type="string", name="name")
+     */
+    private $name;
+
+
+    /**
+     * @ORM\Column(type="string", name="description")
+     */
+    private $description;
+
+
 
     /**
      * Get id
@@ -181,5 +193,53 @@ class Equipment
     public function getCostCoins()
     {
         return $this->costCoins;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Equipment
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Equipment
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

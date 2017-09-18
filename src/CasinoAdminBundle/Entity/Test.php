@@ -27,12 +27,14 @@ class Test
      * @ORM\Column(type="string", name="text")
      */
     private $text;
+
     /**
-     * @ORM\Column(type="integer", name="buff_id")
+     * @ORM\ManyToOne(targetEntity="Buff", inversedBy="tests")
+     * @ORM\JoinColumn(name="buff_id", referencedColumnName="_id")
      */
     private $buffId;
 
-
+    
 
     /**
      * Get id
@@ -71,11 +73,9 @@ class Test
     /**
      * Set buffId
      *
-     * @param integer $buffId
-     *
-     * @return Test
+     * @param \CasinoAdminBundle\Entity\Buff $buffId
      */
-    public function setBuffId($buffId)
+    public function setBuffId(\CasinoAdminBundle\Entity\Buff $buffId = null)
     {
         $this->buffId = $buffId;
 
@@ -85,7 +85,7 @@ class Test
     /**
      * Get buffId
      *
-     * @return integer
+     * @return \CasinoAdminBundle\Entity\Buff
      */
     public function getBuffId()
     {

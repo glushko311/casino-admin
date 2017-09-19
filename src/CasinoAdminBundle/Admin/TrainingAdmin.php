@@ -35,7 +35,6 @@ class TrainingAdmin extends AbstractAdmin
                 'property'=>'trainableProperty',
                 'multiple' => false))
             ->add('picture', 'text', array('label' => 'picture'))
-
         ;
     }
 

@@ -8,49 +8,49 @@ services:
         class: CasinoAdminBundle\Admin\BuffAdmin
         arguments: [~, CasinoAdminBundle\Entity\Buff, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Buffs }
+            - { name: sonata.admin, manager_type: orm, group: Entities, label: Buffs }
         public: true
 
      admin.caring_item:
         class: CasinoAdminBundle\Admin\CaringItemAdmin
         arguments: [~, CasinoAdminBundle\Entity\CaringItem, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Caring items }
+            - { name: sonata.admin, manager_type: orm, group: Entities, label: Caring items }
         public: true
 
      admin.common_variable:
         class: CasinoAdminBundle\Admin\CommonVariableAdmin
         arguments: [~, CasinoAdminBundle\Entity\CommonVariable, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Common Variables }
+            - { name: sonata.admin, manager_type: orm, group: Entities, label: Common Variables }
         public: true
 
      admin.equipment:
         class: CasinoAdminBundle\Admin\EquipmentAdmin
         arguments: [~, CasinoAdminBundle\Entity\Equipment, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Equipment }
+            - { name: sonata.admin, manager_type: orm, group: Entities, label: Equipment }
         public: true
 
      admin.food:
         class: CasinoAdminBundle\Admin\FoodAdmin
         arguments: [~, CasinoAdminBundle\Entity\Food, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Food }
+            - { name: sonata.admin, manager_type: orm, group: Entities, label: Food }
         public: true
 
      admin.training_building:
         class: CasinoAdminBundle\Admin\TrainingBuildingAdmin
         arguments: [~, CasinoAdminBundle\Entity\TrainingBuilding, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Training Building }
+            - { name: sonata.admin, manager_type: orm, group: Entities, label: Training Building }
         public: true
 
      admin.training:
         class: CasinoAdminBundle\Admin\TrainingAdmin
         arguments: [~, CasinoAdminBundle\Entity\Training, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Training }
+            - { name: sonata.admin, manager_type: orm, group: Entities, label: Training }
         public: true
 
 #     admin.test:

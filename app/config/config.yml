@@ -15,6 +15,43 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts: [admin]
 
+# Default configuration for extension with alias: "sonata_admin"
+sonata_admin:
+    templates:
+        layout:  CasinoAdminBundle::layout.html.twig
+#        knp_menu_template: CasinoAdminBundle::custom_knp_menu.html.twig
+    security:
+        handler:              sonata.admin.security.handler.noop
+        information:
+
+            # Prototype
+            id:                   []
+        admin_permissions:
+
+            # Defaults:
+            - CREATE
+            - LIST
+            - DELETE
+            - UNDELETE
+            - EXPORT
+            - OPERATOR
+            - MASTER
+        object_permissions:
+
+            # Defaults:
+            - VIEW
+            - EDIT
+            - DELETE
+            - UNDELETE
+            - OPERATOR
+            - MASTER
+            - OWNER
+        acl_user_manager:     null
+    title:                'Casino Admin Panel'
+    title_logo:           bundles/sonataadmin/logo_title.png
+    options:
+        html5_validate:       true
+
 framework:
     #esi:             ~
     translator:      { fallbacks: [en] }

@@ -46,12 +46,19 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Training Building }
         public: true
 
-     admin.test:
-        class: CasinoAdminBundle\Admin\TestAdmin
-        arguments: [~, CasinoAdminBundle\Entity\Test, ~]
+     admin.training:
+        class: CasinoAdminBundle\Admin\TrainingAdmin
+        arguments: [~, CasinoAdminBundle\Entity\Training, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Test }
+            - { name: sonata.admin, manager_type: orm, label: Training }
         public: true
+
+#     admin.test:
+#        class: CasinoAdminBundle\Admin\TestAdmin
+#        arguments: [~, CasinoAdminBundle\Entity\Test, ~]
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, label: Test }
+#        public: true
 
 
 #      app.admin.post:

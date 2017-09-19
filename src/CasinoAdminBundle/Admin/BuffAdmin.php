@@ -37,10 +37,10 @@ class BuffAdmin extends AbstractAdmin
             ->add('name', 'text', array('label' => 'name'))
             ->add('description', 'textarea', array('label' => 'description'))
 
-            ->add('tests', 'sonata_type_model', array(
-                'class'=>'CasinoAdminBundle\Entity\Test',
-                'property'=>'text',
-                'multiple' => true));
+//            ->add('tests', 'sonata_type_model', array(
+//                'class'=>'CasinoAdminBundle\Entity\Test',
+//                'property'=>'text',
+//                'multiple' => true));
         ;
     }
 

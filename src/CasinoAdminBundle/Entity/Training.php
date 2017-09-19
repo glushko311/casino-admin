@@ -24,8 +24,11 @@ class Training
      */
     private $Id;
 
+
     /**
-     * @ORM\Column(type="integer", name="training_building_id")
+     * One Training has One Training Building.
+     * @ORM\OneToOne(targetEntity="TrainingBuilding")
+     * @ORM\JoinColumn(name="training_building_id", referencedColumnName="_id")
      */
     private $trainingBuildingId;
 

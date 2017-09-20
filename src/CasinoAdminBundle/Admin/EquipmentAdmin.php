@@ -21,10 +21,7 @@ class EquipmentAdmin extends AbstractAdmin
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        // to remove a single route
         $collection->remove('delete');
-//        // OR remove all route except named ones
-//        $collection->clearExcept(array('list', 'show'));
     }
 
     protected function configureFormFields(FormMapper $formMapper)
@@ -49,18 +46,12 @@ class EquipmentAdmin extends AbstractAdmin
             ->add('description', 'textarea', array('label' => 'description'))
             ->add('buffs', 'text', array('label' => 'buff ids'))
             ->add('picture', 'text', array('label' => 'picture url'))
-//
-//            ->add('tests', 'sonata_type_model', array(
-//                'class'=>'CasinoAdminBundle\Entity\Test',
-//                'property'=>'text',
-//                'multiple' => true));
         ;
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-//            ->add('Id')
             ->add('name')
             ->add('costCoins')
             ->add('usesNumber')

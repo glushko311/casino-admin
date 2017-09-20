@@ -24,10 +24,7 @@ class TrainingAdmin extends AbstractAdmin
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        // to remove a single route
         $collection->remove('delete');
-//        // OR remove all route except named ones
-//        $collection->clearExcept(array('list', 'show'));
     }
 
     protected function configureFormFields(FormMapper $formMapper)
@@ -58,7 +55,6 @@ class TrainingAdmin extends AbstractAdmin
             ->add('age')
             ->add('consistency')
             ->add('propertyValue')
-//            ->add('buffId')
         ;
     }
 
@@ -72,8 +68,6 @@ class TrainingAdmin extends AbstractAdmin
             ->addIdentifier('age')
             ->addIdentifier('consistency')
             ->addIdentifier('propertyValue')
-//            ->addIdentifier('buffId')
-
         ;
     }
 }

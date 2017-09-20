@@ -36,8 +36,6 @@ class CommonVariable
     private $value;
 
 
-   
-
     /**
      * Get id
      *

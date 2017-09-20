@@ -21,10 +21,7 @@ class CommonVariableAdmin extends AbstractAdmin
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        // to remove a single route
         $collection->remove('delete');
-//        // OR remove all route except named ones
-//        $collection->clearExcept(array('list', 'show'));
     }
 
     protected function configureFormFields(FormMapper $formMapper)

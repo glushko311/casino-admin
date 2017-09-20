@@ -23,10 +23,7 @@ class CaringItemAdmin extends AbstractAdmin
 {
     protected function configureRoutes(RouteCollection $collection)
     {
-        // to remove a single route
         $collection->remove('delete');
-//        // OR remove all route except named ones
-//        $collection->clearExcept(array('list', 'show'));
     }
 
     protected function configureFormFields(FormMapper $formMapper)
@@ -41,8 +38,6 @@ class CaringItemAdmin extends AbstractAdmin
                 'class'=>'CasinoAdminBundle\Entity\Buff',
                 'property'=>'name',
                 'multiple' => false));
-//            ->add('buffId', 'text', array('label' => 'buffId'))
-
         ;
     }
 
@@ -53,7 +48,6 @@ class CaringItemAdmin extends AbstractAdmin
             ->add('name')
             ->add('costCoins')
             ->add('happiness')
-//            ->add('buffId')
         ;
     }
 
@@ -64,8 +58,6 @@ class CaringItemAdmin extends AbstractAdmin
             ->addIdentifier('name')
             ->addIdentifier('costCoins')
             ->addIdentifier('happiness')
-//            ->addIdentifier('buffId')
-
         ;
     }
 }

@@ -25,17 +25,17 @@ class TrainingBuilding
     private $Id;
 
     /**
-     * @ORM\Column(type="string", name="trainable_property")
+     * @ORM\Column(type="string", name="trainable_property, length=45, nullable=false")
      */
     private  $trainableProperty;
 
     /**
-     * @ORM\Column(type="string", name="name")
+     * @ORM\Column(type="string", name="name, length=50, nullable=false")
      */
     private  $name;
 
     /**
-     * @ORM\Column(type="string", name="description")
+     * @ORM\Column(type="string", name="description, nullable=false")
      */
     private  $description;
 

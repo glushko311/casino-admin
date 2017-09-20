@@ -27,39 +27,39 @@ class Equipment
     private $Id;
 
     /**
-     * @ORM\Column(type="integer", name="type")
+     * @ORM\Column(type="integer", name="type, nullable=false")
      */
     private $type;
 
     /**
-     * @ORM\Column(type="string", name="buffs")
+     * @ORM\Column(type="string", name="buffs, nullable=false")
      */
     private $buffs;
 
     /**
-     * @ORM\Column(type="string", name="picture")
+     * @ORM\Column(type="string", name="picture, length=255, nullable=false")
      */
     private $picture;
 
     /**
-     * @ORM\Column(type="integer", name="uses_number")
+     * @ORM\Column(type="integer", name="uses_number, nullable=false")
      */
     private $usesNumber;
 
     /**
-     * @ORM\Column(type="integer", name="cost_coins")
+     * @ORM\Column(type="integer", name="cost_coins, nullable=false")
      */
     private $costCoins;
 
 
     /**
-     * @ORM\Column(type="string", name="name")
+     * @ORM\Column(type="string", name="name, length=50, nullable=false")
      */
     private $name;
 
 
     /**
-     * @ORM\Column(type="string", name="description")
+     * @ORM\Column(type="string", name="description, nullable=false")
      */
     private $description;
 

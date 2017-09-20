@@ -27,34 +27,34 @@ class CaringItem
     private $Id;
 
     /**
-     * @ORM\Column(type="string", name="picture")
+     * @ORM\Column(type="string", name="picture, length=100")
      */
    private $picture;
 
     /**
      * @ORM\Column(type="integer", name="cost_coins")
      */
-   private $costCoins;
+   private $costCoins = 0;
 
     /**
      * @ORM\Column(type="integer", name="happiness")
      */
-   private $happiness;
+   private $happiness = 0;
 
     /**
      * One Caring Item has One Buff.
      * @ORM\OneToOne(targetEntity="Buff")
      * @ORM\JoinColumn(name="buff_id", referencedColumnName="_id")
      */
-   private $buffId;
+   private $buffId = 0;
 
     /**
-     * @ORM\Column(type="string", name="name")
+     * @ORM\Column(type="string", name="name, length=50, nullable=false")
      */
    private $name;
 
     /**
-     * @ORM\Column(type="string", name="description")
+     * @ORM\Column(type="string", name="description, nullable=false")
      */
    private $description;
 

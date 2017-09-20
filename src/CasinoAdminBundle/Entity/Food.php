@@ -25,7 +25,7 @@ class Food
     private $Id;
 
     /**
-     * @ORM\Column(type="string", name="picture")
+     * @ORM\Column(type="string", name="picture, length=100, nullable=false")
      */
     private $picture;
 
@@ -34,27 +34,27 @@ class Food
      * @ORM\OneToOne(targetEntity="Buff")
      * @ORM\JoinColumn(name="buff_id", referencedColumnName="_id")
      */
-    private $buffId;
+    private $buffId = 0;
 
     /**
-     * @ORM\Column(type="integer", name="cost_сoins")
+     * @ORM\Column(type="integer", name="cost_сoins, nullable=false")
      */
-    private $costCoins;
+    private $costCoins = 0;
 
     /**
-     * @ORM\Column(type="integer", name="happiness")
+     * @ORM\Column(type="integer", name="happiness, nullable=false")
      */
-    private $happiness;
+    private $happiness = 0;
 
 
     /**
-     * @ORM\Column(type="string", name="name")
+     * @ORM\Column(type="string", name="name, length=50, nullable=false")
      */
     private $name;
 
 
     /**
-     * @ORM\Column(type="string", name="description")
+     * @ORM\Column(type="string", name="description, nullable=false")
      */
     private $description;
 

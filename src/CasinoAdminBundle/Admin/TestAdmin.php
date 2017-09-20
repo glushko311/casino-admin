@@ -12,9 +12,19 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 class TestAdmin extends AbstractAdmin
 {
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        // to remove a single route
+        $collection->remove('delete');
+//        // OR remove all route except named ones
+//        $collection->clearExcept(array('list', 'show'));
+    }
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper

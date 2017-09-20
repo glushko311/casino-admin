@@ -19,6 +19,7 @@ sonata_block:
 sonata_admin:
     templates:
         layout:  CasinoAdminBundle::layout.html.twig
+        list:  CasinoAdminBundle::base_list.html.twig
 #        knp_menu_template: CasinoAdminBundle::custom_knp_menu.html.twig
     security:
         handler:              sonata.admin.security.handler.noop

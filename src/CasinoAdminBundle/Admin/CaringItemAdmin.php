@@ -14,12 +14,21 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 //use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\CoreBundle\Form\Type\CollectionType;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 
 
 
 class CaringItemAdmin extends AbstractAdmin
 {
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        // to remove a single route
+        $collection->remove('delete');
+//        // OR remove all route except named ones
+//        $collection->clearExcept(array('list', 'show'));
+    }
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper

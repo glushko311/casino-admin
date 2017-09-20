@@ -26,42 +26,42 @@ class Buff
     private $Id;
 
     /**
-     * @ORM\Column(type="string", name="affect_property, length = 20, nullable=false")
+     * @ORM\Column(type="string", name="affect_property", length = 20, nullable=false)
      */
     private $affectProperty = '';
 
     /**
-     * @ORM\Column(type="integer", name="affect_value, nullable=false")
+     * @ORM\Column(type="integer", name="affect_value", nullable=false)
      */
     private $affectValue = 0;
 
     /**
-     * @ORM\Column(type="integer", name="duration, nullable=false")
+     * @ORM\Column(type="integer", name="duration", nullable=false)
      */
     private $duration = 0;
 
     /**
-     * @ORM\Column(type="string", name="actions, nullable=false")
+     * @ORM\Column(type="string", name="actions", nullable=false)
      */
     private $actions;
 
     /**
-     * @ORM\Column(type="integer", name="action_count, nullable=false")
+     * @ORM\Column(type="integer", name="action_count", nullable=false)
      */
     private $actionCount = 0;
 
     /**
-     * @ORM\Column(type="string", name="picture, length=255, nullable=false")
+     * @ORM\Column(type="string", name="picture", length=255, nullable=false)
      */
     private $picture;
 
     /**
-     * @ORM\Column(type="string", name="name, length = 50, nullable=false")
+     * @ORM\Column(type="string", name="name", length = 50, nullable=false)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", name="description, nullable=false")
+     * @ORM\Column(type="string", name="description", nullable=false)
      */
     private $description;
 

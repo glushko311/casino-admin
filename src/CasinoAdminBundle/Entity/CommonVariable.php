@@ -26,12 +26,12 @@ class CommonVariable
     private $id;
 
     /**
-     * @ORM\Column(type="string", name="var_name, length=50, nullable=false")
+     * @ORM\Column(type="string", name="var_name", length=50, nullable=false)
      */
     private $varName = '';
 
     /**
-     * @ORM\Column(type="string", name="value, nullable=false")
+     * @ORM\Column(type="string", name="value", nullable=false)
      */
     private $value;
 

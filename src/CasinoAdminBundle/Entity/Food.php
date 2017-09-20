@@ -25,7 +25,7 @@ class Food
     private $Id;
 
     /**
-     * @ORM\Column(type="string", name="picture, length=100, nullable=false")
+     * @ORM\Column(type="string", name="picture", length=100, nullable=false)
      */
     private $picture;
 
@@ -37,24 +37,24 @@ class Food
     private $buffId = 0;
 
     /**
-     * @ORM\Column(type="integer", name="cost_сoins, nullable=false")
+     * @ORM\Column(type="integer", name="cost_сoins", nullable=false)
      */
     private $costCoins = 0;
 
     /**
-     * @ORM\Column(type="integer", name="happiness, nullable=false")
+     * @ORM\Column(type="integer", name="happiness", nullable=false)
      */
     private $happiness = 0;
 
 
     /**
-     * @ORM\Column(type="string", name="name, length=50, nullable=false")
+     * @ORM\Column(type="string", name="name", length=50, nullable=false)
      */
     private $name;
 
 
     /**
-     * @ORM\Column(type="string", name="description, nullable=false")
+     * @ORM\Column(type="string", name="description", nullable=false)
      */
     private $description;
 

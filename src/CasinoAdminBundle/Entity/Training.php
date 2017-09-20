@@ -33,37 +33,37 @@ class Training
     private $trainingBuildingId;
 
     /**
-     * @ORM\Column(type="integer", name="level, nullable=false")
+     * @ORM\Column(type="integer", name="level", nullable=false)
      */
     private $level;
 
     /**
-     * @ORM\Column(type="integer", name="cost_coins, nullable=false")
+     * @ORM\Column(type="integer", name="cost_coins", nullable=false)
      */
     private $costCoins = 0;
 
     /**
-     * @ORM\Column(type="string", name="picture, length=50, nullable=false")
+     * @ORM\Column(type="string", name="picture", length=50, nullable=false)
      */
     private $picture;
 
     /**
-     * @ORM\Column(type="integer", name="age, nullable=false")
+     * @ORM\Column(type="integer", name="age", nullable=false)
      */
     private $age = 0;
 
     /**
-     * @ORM\Column(type="integer", name="consistency, nullable=false")
+     * @ORM\Column(type="integer", name="consistency", nullable=false)
      */
     private $consistency = 0;
 
     /**
-     * @ORM\Column(type="integer", name="property_value, nullable=false")
+     * @ORM\Column(type="integer", name="property_value", nullable=false)
      */
     private $propertyValue = 0;
 
     /**
-     * @ORM\Column(type="string", name="name, length=50, nullable=false")
+     * @ORM\Column(type="string", name="name", length=50, nullable=false)
      */
     private $name;
 

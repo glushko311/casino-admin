@@ -27,7 +27,7 @@ class CaringItem
     private $Id;
 
     /**
-     * @ORM\Column(type="string", name="picture, length=100")
+     * @ORM\Column(type="string", name="picture", length=100)
      */
    private $picture;
 
@@ -49,12 +49,12 @@ class CaringItem
    private $buffId = 0;
 
     /**
-     * @ORM\Column(type="string", name="name, length=50, nullable=false")
+     * @ORM\Column(type="string", name="name", length=50, nullable=false)
      */
    private $name;
 
     /**
-     * @ORM\Column(type="string", name="description, nullable=false")
+     * @ORM\Column(type="string", name="description", nullable=false)
      */
    private $description;
 

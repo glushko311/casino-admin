@@ -65,19 +65,6 @@ class Buff
      */
     private $description;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Test", mappedBy="buffId")
-     */
-    private $tests;
-
-    
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->tests = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get id
@@ -233,44 +220,6 @@ class Buff
         return $this->picture;
     }
 
-    /**
-     * Add test
-     *
-     * @param \CasinoAdminBundle\Entity\Test $test
-     *
-     * @return Buff
-     */
-    public function addTest(\CasinoAdminBundle\Entity\Test $test)
-    {
-        $this->tests[] = $test;
-
-        return $this;
-    }
-
-    /**
-     * Remove test
-     *
-     * @param \CasinoAdminBundle\Entity\Test $test
-     */
-    public function removeTest(\CasinoAdminBundle\Entity\Test $test)
-    {
-        $this->tests->removeElement($test);
-    }
-
-    /**
-     * Get tests
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTests()
-    {
-        return $this->tests;
-    }
-
-    public function __toString()
-    {
-        return strval($this->Id);
-    }
 
     /**
      * Set name
